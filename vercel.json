@@ -1,0 +1,7 @@
+{
+    "functions": {
+        "api/auth/verify-token.ts": {
+            "runtime": "nodejs18.x"
+        }
+    }
+}
