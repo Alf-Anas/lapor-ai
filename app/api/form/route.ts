@@ -145,6 +145,7 @@ export async function POST(request: Request) {
 
 export async function GET() {
     try {
+        console.log('PRISMA', prisma)
         const laporan = await prisma.laporan.findMany({
             orderBy: {
                 updated_at: 'desc',
