@@ -17,7 +17,6 @@ import { useEffect } from 'react';
 import { ROUTE } from '@/utils/constant';
 import toast from 'react-hot-toast';
 import { errorResponse } from '@/utils';
-import ImgViewer from '@/components/preview/ImgViewer';
 import useAPI from '@/hooks/useAPI';
 import { API } from '@/utils/api';
 import Markdown from 'react-markdown';
@@ -26,6 +25,7 @@ import { LaporanResponseType } from '@/types/responses/laporan.interface';
 import ShowLoading from '@/components/preview/ShowLoading';
 import { getStatusDataColor, STATUS_DATA } from '@/ref/status';
 import dayjs from 'dayjs';
+import Img from '@/components/preview/Img';
 
 const steps = [
     STATUS_DATA.DITERUSKAN.key,
@@ -93,9 +93,8 @@ export default function FormViewPage() {
                         minRows={4}
                         multiline
                     />
-
                     {laporan?.photo && (
-                        <ImgViewer
+                        <Img
                             src={laporan.photo}
                             width='100%'
                             className='max-w-60'
