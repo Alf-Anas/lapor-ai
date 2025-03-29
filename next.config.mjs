@@ -1,7 +1,6 @@
 /** @type {import("next").NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
-    output: 'standalone',
     env: {
         NEXTAUTH_URL_IAM: process.env.NEXTAUTH_URL_IAM,
         NEXTAUTH_REALM_IAM: process.env.NEXTAUTH_REALM_IAM,
