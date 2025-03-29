@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "laporan" ALTER COLUMN "status" SET DEFAULT '1:DITERUSKAN';
