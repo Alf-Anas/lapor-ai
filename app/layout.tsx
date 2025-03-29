@@ -30,6 +30,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='id'>
+            <head>
+                <meta name='dicoding:email' content='alfadila.anas@gmail.com' />
+            </head>
             <body>
                 <ThemeProvider theme={theme}>
                     <CssBaseline />
