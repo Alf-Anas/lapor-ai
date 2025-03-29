@@ -33,6 +33,7 @@ export const verifyToken = (
                 console.error('JWT Verification Failed:', err.message)
                 reject(err)
             } else {
+                console.log('decoded', decoded)
                 resolve(decoded)
             }
         })
@@ -41,6 +42,7 @@ export const verifyToken = (
 
 export async function decodeToken(token: string) {
     try {
+        console.log('token', token)
         const decoded = await verifyToken(token)
         return {
             success: true,
@@ -55,11 +57,13 @@ export async function decodeToken(token: string) {
 }
 
 export async function getUserFromToken(authHeader: string | null) {
+    console.log('AAAA', authHeader)
     const token = (authHeader || 'Bearer <token>').split(' ')[1]
 
     const res = await decodeToken(token)
     const userId: string = getValObject(res, 'data.sub', 'X')
     const userName: string = getValObject(res, 'data.name', 'X')
+    console.log('res', res)
 
     if (!res.success || !res.data || !userId) {
         return { success: false, message: 'Token Invalid!' }
